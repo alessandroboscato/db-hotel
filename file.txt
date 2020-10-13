@@ -40,3 +40,6 @@ $sql = "SELECT *\n"
     . "AND `date_of_birth` LIKE \'%1975%\'";
 
 8 Quanti posti letto ha l’hotel in totale?
+$sql = "SELECT SUM(`beds`)\n"
+
+    . "FROM `stanze`";
