@@ -22,9 +22,14 @@ $sql = "SELECT *\n"
     . "WHERE `name` LIKE \'D%\'";
 
 5 Calcola il totale degli ordini accepted
+$sql = "SELECT COUNT(`id`)\n"
+
+    . "FROM `pagamenti`\n"
+
+    . "WHERE `status` = \'accepted\'";
 
 6 Qual è il prezzo massimo pagato?
 
-7 Seleziona gli ospiti riconosciuti con patente e nati nel 1975S
+7 Seleziona gli ospiti riconosciuti con patente e nati nel 1975
 
 8 Quanti posti letto ha l’hotel in totale?
