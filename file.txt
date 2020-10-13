@@ -1,0 +1,15 @@
+1 Seleziona tutti gli ospiti che sono stati identificati con la carta di identità
+
+2 Seleziona tutti gli ospiti che sono nati dopo il 1988
+
+3 Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
+
+4 Seleziona tutti gli ospiti il cui nome inizia con la D
+
+5 Calcola il totale degli ordini accepted
+
+6 Qual è il prezzo massimo pagato?
+
+7 Seleziona gli ospiti riconosciuti con patente e nati nel 1975S
+
+8 Quanti posti letto ha l’hotel in totale?
