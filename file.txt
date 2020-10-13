@@ -31,5 +31,12 @@ $sql = "SELECT COUNT(`id`)\n"
 6 Qual è il prezzo massimo pagato?
 
 7 Seleziona gli ospiti riconosciuti con patente e nati nel 1975
+$sql = "SELECT *\n"
+
+    . "FROM `ospiti`\n"
+
+    . "WHERE `document_type` = \'Driver license\'\n"
+
+    . "AND `date_of_birth` LIKE \'%1975%\'";
 
 8 Quanti posti letto ha l’hotel in totale?
