@@ -15,6 +15,11 @@ $sql = "SELECT *\n"
 3 Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
 
 4 Seleziona tutti gli ospiti il cui nome inizia con la D
+$sql = "SELECT *\n"
+
+    . "FROM `ospiti`\n"
+
+    . "WHERE `name` LIKE \'D%\'";
 
 5 Calcola il totale degli ordini accepted
 
