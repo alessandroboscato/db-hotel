@@ -29,3 +29,7 @@ $sql = "SELECT COUNT(`id`), HOUR(`created_at`)\n"
 
 
 Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
+SELECT MAX (mycount) 
+FROM (SELECT agent_code,COUNT(agent_code) mycount 
+FROM orders 
+GROUP BY agent_code);
