@@ -5,7 +5,20 @@ $sql = "SELECT COUNT(`id`), YEAR(`date_of_birth`)\n"
     . "FROM `ospiti`\n"
 
     . "GROUP BY YEAR(`date_of_birth`)";
-Somma i prezzi dei pagamenti raggruppandoli per status
-Conta quante volte è stata prenotata ogni stanza
+
+2 Somma i prezzi dei pagamenti raggruppandoli per status
+$sql = "SELECT SUM(`price`), `status`\n"
+
+    . "FROM `pagamenti`\n"
+
+    . "GROUP BY `status`";
+
+3 Conta quante volte è stata prenotata ogni stanza
+$sql = "SELECT COUNT(`stanza_id`), `stanza_id`\n"
+
+    . "FROM `prenotazioni`\n"
+
+    . "GROUP BY `stanza_id`";
+
 Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti
 Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
