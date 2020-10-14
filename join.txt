@@ -25,6 +25,19 @@ $sql = "SELECT `prenotazione_id`, `name`, `lastname`\n"
 
 3 Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
+$sql = "SELECT `name`, `lastname`, `price`\n"
+
+    . "FROM `pagamenti`\n"
+
+    . "LEFT JOIN `prenotazioni`\n"
+
+    . "ON prenotazioni.id = pagamenti.prenotazione_id\n"
+
+    . "LEFT JOIN `paganti`\n"
+
+    . "ON paganti.id = pagamenti.pagante_id\n"
+
+    . "WHERE MONTH(prenotazioni.created_at) = 05";
 4 Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
 5 Prendi i dati di fatturazione per la prenotazione con id=7
