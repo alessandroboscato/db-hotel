@@ -20,5 +20,12 @@ $sql = "SELECT COUNT(`stanza_id`), `stanza_id`\n"
 
     . "GROUP BY `stanza_id`";
 
-Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti
+4 Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti
+$sql = "SELECT COUNT(`id`), HOUR(`created_at`)\n"
+
+    . "FROM `prenotazioni`\n"
+
+    . "GROUP BY HOUR(`created_at`)";
+
+
 Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
