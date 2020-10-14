@@ -1,0 +1,11 @@
+Group by
+1 Conta gli ospiti raggruppandoli per anno di nascita
+$sql = "SELECT COUNT(`id`), YEAR(`date_of_birth`)\n"
+
+    . "FROM `ospiti`\n"
+
+    . "GROUP BY YEAR(`date_of_birth`)";
+Somma i prezzi dei pagamenti raggruppandoli per status
+Conta quante volte è stata prenotata ogni stanza
+Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti
+Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
