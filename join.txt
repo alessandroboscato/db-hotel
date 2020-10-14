@@ -14,17 +14,14 @@ $sql = "SELECT COUNT(`prenotazione_id`), `name`\n"
     . "HAVING COUNT(`prenotazione_id`) > 2";
 
 2 Stampare tutti gli ospiti per ogni prenotazione
-$sql = "SELECT *\n"
+
+$sql = "SELECT `prenotazione_id`, `name`, `lastname`\n"
 
     . "FROM `prenotazioni_has_ospiti`\n"
 
     . "INNER JOIN `ospiti`\n"
 
-    . "ON prenotazioni_has_ospiti.ospite_id = ospiti.id\n"
-
-    . "INNER JOIN `prenotazioni`\n"
-
-    . "ON prenotazioni.id = prenotazioni_has_ospiti.prenotazione_id";
+    . "ON ospiti.id = prenotazioni_has_ospiti.ospite_id";
 
 3 Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
