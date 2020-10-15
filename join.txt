@@ -61,7 +61,21 @@ $sql = "SELECT SUM(pagamenti.price)\n"
 
 5 Prendi i dati di fatturazione per la prenotazione con id=7
 
+$sql = "SELECT paganti.name, paganti.lastname, paganti.address\n"
+
+    . "FROM `paganti`\n"
+
+    . "LEFT JOIN `pagamenti`\n"
+
+    . "ON paganti.ospite_id = pagamenti.pagante_id\n"
+
+    . "LEFT JOIN `prenotazioni`\n"
+
+    . "ON pagamenti.prenotazione_id = prenotazioni.id";
+
 6 Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+
+
 
 $sql = "SELECT stanze.id, prenotazioni.stanza_id\n"
 
