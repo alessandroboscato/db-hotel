@@ -45,6 +45,20 @@ $sql = "SELECT ospiti.name AS `nome_ospite`, ospiti.lastname AS `cognome_ospiti`
     . "WHERE MONTH(prenotazioni.created_at) = 05";
 4 Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
+$sql = "SELECT SUM(pagamenti.price)\n"
+
+    . "FROM `pagamenti`\n"
+
+    . "INNER JOIN `prenotazioni`\n"
+
+    . "ON pagamenti.prenotazione_id = prenotazioni.id\n"
+
+    . "INNER JOIN `stanze`\n"
+
+    . "ON stanze.id = prenotazioni.stanza_id\n"
+
+    . "WHERE stanze.floor = 1";
+
 5 Prendi i dati di fatturazione per la prenotazione con id=7
 
 6 Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
