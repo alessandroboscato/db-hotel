@@ -1,5 +1,7 @@
 Group by
+
 1 Conta gli ospiti raggruppandoli per anno di nascita
+
 $sql = "SELECT COUNT(`id`), YEAR(`date_of_birth`)\n"
 
     . "FROM `ospiti`\n"
@@ -25,11 +27,18 @@ $sql = "SELECT COUNT(`id`), HOUR(`created_at`)\n"
 
     . "FROM `prenotazioni`\n"
 
-    . "GROUP BY HOUR(`created_at`)";
+    . "GROUP BY HOUR(`created_at`)\n"
 
+    . "ORDER BY COUNT(`id`) DESC";
 
-Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
-SELECT MAX (mycount) 
-FROM (SELECT agent_code,COUNT(agent_code) mycount 
-FROM orders 
-GROUP BY agent_code);
+5 Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
+
+$sql = "SELECT COUNT(`id`) AS `totale_prenotazioni`, `ospite_id`\n"
+
+    . "FROM `prenotazioni_has_ospiti`\n"
+
+    . "GROUP BY (`ospite_id`)\n"
+
+    . "ORDER BY `totale_prenotazioni`\n"
+
+    . "DESC LIMIT 1";

@@ -38,6 +38,7 @@ $sql = "SELECT `name`, `lastname`, `price`\n"
     . "ON paganti.id = pagamenti.pagante_id\n"
 
     . "WHERE MONTH(prenotazioni.created_at) = 05";
+	--> aggiungere WHERE YEAR, per scrupolo
 4 Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
 5 Prendi i dati di fatturazione per la prenotazione con id=7
