@@ -1,4 +1,5 @@
 Join
+
 1 Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
 
 $sql = "SELECT COUNT(`prenotazione_id`), `name`\n"
@@ -25,20 +26,23 @@ $sql = "SELECT `prenotazione_id`, `name`, `lastname`\n"
 
 3 Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
-$sql = "SELECT `name`, `lastname`, `price`\n"
+$sql = "SELECT ospiti.name AS `nome_ospite`, ospiti.lastname AS `cognome_ospiti`, paganti.name AS `nome_pagante`, paganti.lastname AS `cognome_pagante`, pagamenti.price\n"
 
     . "FROM `pagamenti`\n"
 
-    . "LEFT JOIN `prenotazioni`\n"
+    . "INNER JOIN `prenotazioni`\n"
 
     . "ON prenotazioni.id = pagamenti.prenotazione_id\n"
 
-    . "LEFT JOIN `paganti`\n"
+    . "INNER JOIN `paganti`\n"
 
     . "ON paganti.id = pagamenti.pagante_id\n"
 
+    . "INNER JOIN `ospiti`\n"
+
+    . "ON ospiti.id = paganti.ospite_id\n"
+
     . "WHERE MONTH(prenotazioni.created_at) = 05";
-	--> aggiungere WHERE YEAR, per scrupolo
 4 Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
 5 Prendi i dati di fatturazione per la prenotazione con id=7
